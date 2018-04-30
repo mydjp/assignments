@@ -1,0 +1,43 @@
+if(distance < alertDist && distance > attackDist){
+			print("Wolf sees player");
+			state.SetBool("isFollowing",true);
+			state.SetBool("isWandering",false);
+			state.SetBool("isAttacking",false);
+			speed = 13;
+			transform.LookAt(player);
+			transform.Translate(Vector3.forward*speed*Time.deltaTime);
+
+		}
+		//Attacking
+		else if(distance <=  alertDist){
+			
+			direction = player.position - transform.position;
+			direction.y = 0;
+
+			
+			state.SetBool("isFollowing",false);
+			state.SetBool("isAttacking",true);
+			state.SetBool("isWandering",false);
+
+			speed = 3;
+			
+			transform.LookAt(player);
+			transform.Translate(Vector3.forward*speed*Time.deltaTime);
+
+			if(direction.magnitude <= attackDist){
+				print("wolf is attacking!");
+				state.SetBool("isFollowing",false);
+				state.SetBool("isAttacking",true);
+				state.SetBool("isWandering",false);
+			}
+		}
+		
+		//Wandering
+		else if(distance > alertDist){
+			 timer += Time.deltaTime;
+
+			 	state.SetBool("isFollowing",false);
+				state.SetBool("isAttacking",false);
+				state.SetBool("isWandering",true);
+
+This is my if statements. so from my understanding.. you would use if this happens then run this. but if that doesn't happen then run this statment.
