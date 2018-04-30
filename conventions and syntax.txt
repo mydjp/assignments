@@ -1,0 +1,66 @@
+so when you put periods its going to dive deeper into more detail about a line of code. The example the provide was an adress which makes sense your just
+going deeper and deeper into what you can make your line of code do.. and { is bascially one block of code it should have everything your planning on doing with 
+some code.. you can and will have { inside of { and they shoould be tabbed in so they line up.. and ; is basically like a . for a english sentance it ends one line of code.
+
+
+
+{
+			float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+			if (distanceToEnemy < shortestDistance)
+			{
+				shortestDistance = distanceToEnemy;
+				nearestEnemy = enemy;
+			}
+}
+
+///////////////
+
+{
+		GameObject STbulletGo = (GameObject) Instantiate(STbulletPrefab, firePoint.position, firePoint.rotation);
+		STBullet bullet = STbulletGo.GetComponent<STBullet>();
+
+		if (bullet != null)
+			bullet.Seek(target);
+}
+////////////////
+private void OnDrawGizmosSelected()
+
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, range);
+	}
+///////////////////////////////
+{
+
+	public int damage = 10;
+
+	public int time = 5;
+
+	// Use this for initialization
+	void Start()
+	{
+		//StartCoroutine(DestroyBullet());
+
+	}
+
+	
+
+	void OnCollisionEnter(Collision other)
+	{
+		if (other.gameObject.tag == "Enemy")
+		{
+			other.gameObject.GetComponent<wolfHealth>().TakeDamage(damage);
+			Destroy(gameObject);
+			Debug.Log("Pew Pew");
+		}
+	}
+
+
+// Update is called once per frame
+	
+	//IEnumerator DestroyBullet(){
+		//yield return new WaitForSeconds(time);
+	//	Destroy(gameObject);
+	//}
+
+}
