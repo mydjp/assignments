@@ -1,0 +1,102 @@
+ for the else clause its basically what i said at the end of the if statments. if your statments intiall call doesn't happen then call the else statment. 
+
+
+
+if(distance < alertDist && distance > attackDist){
+			print("Wolf sees player");
+			state.SetBool("isFollowing",true);
+			state.SetBool("isWandering",false);
+			state.SetBool("isAttacking",false);
+			speed = 13;
+			transform.LookAt(player);
+			transform.Translate(Vector3.forward*speed*Time.deltaTime);
+
+		}
+		//Attacking
+		else if(distance <=  alertDist){
+			
+			direction = player.position - transform.position;
+			direction.y = 0;
+
+			
+			state.SetBool("isFollowing",false);
+			state.SetBool("isAttacking",true);
+			state.SetBool("isWandering",false);
+
+			speed = 3;
+			
+			transform.LookAt(player);
+			transform.Translate(Vector3.forward*speed*Time.deltaTime);
+
+			if(direction.magnitude <= attackDist){
+				print("wolf is attacking!");
+				state.SetBool("isFollowing",false);
+				state.SetBool("isAttacking",true);
+				state.SetBool("isWandering",false);
+			}
+		}
+		
+		//Wandering
+		else if(distance > alertDist){
+			 timer += Time.deltaTime;
+
+			 	state.SetBool("isFollowing",false);
+				state.SetBool("isAttacking",false);
+				state.SetBool("isWandering",true);
+
+
+
+
+////////
+
+if (nearestEnemy != null && shortestDistance <= range)
+		{
+			target = nearestEnemy.transform;
+		}
+		else
+		{
+			target = null;
+		}
+
+///////
+             // if(reload== true)
+                     //{
+                // animation.Play("Take 001");
+                    // }
+            //if(Input.GetButtonDown("Fire1"))
+                   //  {
+               //reload.SetBool("Reload", true);
+			   //reload.SetBool("rifleIdol", false);
+                  //  }
+					// else if(reload == false)
+						// {
+						 //   reload.SetBool("Reload", false);
+			   				//reload.SetBool("rifleIdol", true);
+						// }
+			
+
+
+
+///////////////////////
+
+if(distance < alertDist && distance > attackDist)
+        {
+			print("Chicke sees player");
+			state.SetBool("Run Away",true);
+			state.SetBool("Wander",false);
+			
+			speed = 13;
+			transform.LookAt(wolf);
+            //2 * transform.position- lookingAt.position
+			transform.Translate(Vector3.forward*speed*Time.deltaTime);
+
+		}
+	          //Wandering
+		else if(distance > alertDist)
+        {
+			 timer += Time.deltaTime;
+
+			 	state.SetBool("Run Away",false);
+				
+				state.SetBool("Wander",true);
+
