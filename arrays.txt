@@ -1,0 +1,44 @@
+
+So all the examples i have given up until now have been from my code ... But i have never used arrays so dont have the best grasp on it. but its a way to store 
+bunch of variables with one line of code. So i asume they use this when you play lets say call of duty it would be have your 12 players and player 1 = (insert gamer tag)
+.. 
+
+
+
+
+
+
+
+
+var cars = ["Saab", "Volvo", "BMW"];
+
+///
+
+int main()
+{
+   int i;
+   int arr[5] = {10,20,30,40,50};
+ 
+      // declaring and Initializing array in C
+      //To initialize all array elements to 0, use int arr[5]={0};
+      /* Above array can be initialized as below also
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50; */
+ 
+   for (i=0;i<5;i++)
+   {
+      // Accessing each variable
+      printf("value of arr[%d] is %d \n", i, arr[i]);
+   }
+ 
+}
+/////////
+int[] array = new int[4]; 
+
+array[0] = 10;
+array[1] = 20;
+array[2] = 30;
+array[3] = 40;
