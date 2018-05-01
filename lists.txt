@@ -1,0 +1,51 @@
+So a list is what im giong to use when i make my tower defence game... i will store all of my enemies in a list then call them in for certain rounds.
+You dont have to have have a predetermined number you want in your list like you do in an array you can just add if you need a new one..
+
+
+   static void Main()
+    {
+        List<int> list = new List<int>();
+        list.Add(2);
+        list.Add(3);
+        list.Add(5);
+        list.Add(7);
+    }
+}
+
+
+
+///////////////////////
+
+
+List<string> colors = new List<string>();
+    colors.Add("Red");
+    colors.Add("Blue");
+    colors.Add("Green");
+
+
+///////////////////
+
+
+IList<int> intList = new List<int>();
+intList.Add(10);
+intList.Add(20);
+intList.Add(30);
+intList.Add(40);
+
+//////////////
+
+IList<string> strList = new List<string>();
+strList.Add("one");
+strList.Add("two");
+strList.Add("three");
+strList.Add("four");
+strList.Add("four");
+strList.Add(null);
+strList.Add(null);
+
+//////////////////
+
+IList<Student> studentList = new List<Student>();
+studentList.Add(new Student());
+studentList.Add(new Student());
+studentList.Add(new Student());
