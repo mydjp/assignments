@@ -1,0 +1,110 @@
+So when i use logical operators they are to switch the state of one my characters.. if this sequence and this sequence both happen. then make this happen.
+you can also use it so if neither of the sequences happen then you can also make something happen.
+
+
+		// Alert
+		if(distance < alertDist && distance > attackDist){
+			print("Wolf sees player");
+			state.SetBool("isFollowing",true);
+			state.SetBool("isWandering",false);
+			state.SetBool("isAttacking",false);
+			speed = 13;
+			transform.LookAt(player);
+			transform.Translate(Vector3.forward*speed*Time.deltaTime);
+
+		}
+		//Attacking
+		else if(distance <=  alertDist){
+			
+			direction = player.position - transform.position;
+			direction.y = 0;
+
+			
+			state.SetBool("isFollowing",false);
+			state.SetBool("isAttacking",true);
+			state.SetBool("isWandering",false);
+
+			speed = 3;
+			
+			transform.LookAt(player);
+			transform.Translate(Vector3.forward*speed*Time.deltaTime);
+
+			if(direction.magnitude <= attackDist){
+				print("wolf is attacking!");
+				state.SetBool("isFollowing",false);
+				state.SetBool("isAttacking",true);
+				state.SetBool("isWandering",false);
+			}
+		}
+		
+		//Wandering
+		else if(distance > alertDist){
+			 timer += Time.deltaTime;
+
+			 	state.SetBool("isFollowing",false);
+				state.SetBool("isAttacking",false);
+				state.SetBool("isWandering",true);
+
+
+
+/////////////////////////////////////////////////
+
+if(distance < alertDist && distance > attackDist)
+        {
+			print("Chicke sees player");
+			state.SetBool("Run Away",true);
+			state.SetBool("Wander",false);
+			
+			speed = 13;
+			transform.LookAt(wolf);
+            //2 * transform.position- lookingAt.position
+			transform.Translate(Vector3.forward*speed*Time.deltaTime);
+
+		}
+	          //Wandering
+		else if(distance > alertDist)
+        {
+			 timer += Time.deltaTime;
+
+			 	state.SetBool("Run Away",false);
+				
+				state.SetBool("Wander",true);
+
+			if (timer >= wanderTimer)
+
+////////////////////////////////////////
+
+
+
+
+namespace OperatorsAppl {
+   class Program {
+      static void Main(string[] args) {
+         bool a = true; 
+         bool b = true;
+         
+         if (a && b) {
+            Console.WriteLine("Line 1 - Condition is true");
+         }
+         
+         if (a || b) {
+            Console.WriteLine("Line 2 - Condition is true");
+         }
+         
+         /* lets change the value of  a and b */
+         a = false;
+         b = true;
+         
+         if (a && b) {
+            Console.WriteLine("Line 3 - Condition is true");
+         } else {
+            Console.WriteLine("Line 3 - Condition is not true");
+         }
+         
+         if (!(a && b)) {
+            Console.WriteLine("Line 4 - Condition is true");
+         }
+         Console.ReadLine();
+      }
+   }
+}
