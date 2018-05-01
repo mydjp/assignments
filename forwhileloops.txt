@@ -1,0 +1,18 @@
+For while loops confuse me the most but they are for as much as i can understand they use arrays. goes through each of the items in the array and runs the loops.
+
+public class ForeachLoop : MonoBehaviour 
+{   
+    void Start () 
+    {
+        string[] strings = new string[3];
+        
+        strings[0] = "First string";
+        strings[1] = "Second string";
+        strings[2] = "Third string";
+        
+        foreach(string item in strings)
+        {
+            print (item);
+        }
+    }
+}
