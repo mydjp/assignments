@@ -1,0 +1,55 @@
+this has anything to do with adding or subracting and interger. you can also make it equal the number using == to equal the number that you input.. if you use -=
+then you will start to subract from the number that you started with. if you use a  public variable you can set speed and health etc of an object.
+
+void Update () 
+	{
+		if (coolDownTimer > 0)
+		{
+			coolDownTimer -= Time.deltaTime;
+		}
+
+		if (coolDownTimer < 0)
+		{
+			coolDownTimer = 0;
+		}
+
+////
+
+
+	if (currentHealth <= 0)
+		{
+			currentHealth = 0;
+			print("Youre Dead! GameOver");
+		}
+	}
+
+
+//////
+
+if (fireCountdown <= 0f)
+		{
+			Shoot();
+			fireCountdown = 1f / fireRate;
+		}
+
+		fireCountdown -= Time.deltaTime;
+
+	}
+
+//////
+
+
+	public Transform target;
+	public float range = 15f;
+	public float fireRate = 1F;
+	private float fireCountdown = 0f;
+
+	[Header("Need to put stuff here!!")]
+	public string enemyTag = "Enemy";
+
+	public Transform partToRotate;
+	public float turnSpeed = 10f;
+
+	public GameObject STbulletPrefab;
+	public Transform firePoint;
+	
