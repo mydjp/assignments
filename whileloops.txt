@@ -1,0 +1,24 @@
+loops are a way of making your code repeat over and over again .. the example we used in class was 99 bottles of beer on the wall..
+you can make the scrip keep looping take one bottle down until youre at 0
+
+
+using UnityEngine;
+using System.Collections;
+
+public class WhileLoop : MonoBehaviour
+{
+    int bottlesonthewall =99;
+    
+    
+    void Start ()
+    {
+        while(Bottlesonthewall; 0)
+        {
+            Debug.Log ("Beer got passed around");
+            bottlesonthewall--;
+        }
+    }
+}
+
+///
+
